@@ -15,4 +15,8 @@ func main() {
 
 	//(karena pointer, gunakan tanda bintang *)
 	fmt.Printf("Halo %s, umur Anda %d. Menikah: %t\n", *namaPtr, *umurPtr, *menikahPtr)
+
+	// -h untuk cek deskripsi flag yang sudah di daftarkan
+	// --nama => langsung ditulis dengan spasi
+	// -nama=Annas => kalau 1 dash nya pakai sama dengan tanpa petik/tergantung, ding
 }
