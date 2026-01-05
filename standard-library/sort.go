@@ -12,6 +12,7 @@ type User struct {
 
 type UserSlice []User
 
+// buat kontrak interface untuk UserSlice nya
 func (s UserSlice) Len() int {
 	return len(s)
 }
