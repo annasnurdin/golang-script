@@ -2,7 +2,6 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 	"io"
 	"os"
 )
@@ -32,14 +31,25 @@ func readFile(name string) (string, error) {
 		if err == io.EOF {
 			break
 		}
-		message += string(line)
+		message += string(line) + "\n"
 
 	}
 	return message, nil
 }
 
+func addToFile(name string, message string) error {
+	file, err := os.OpenFile(name, os.O_RDWR|os.O_APPEND, 0666)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	file.WriteString(message)
+	return nil
+}
+
 func main() {
 	// createNewFile("test.log", "cek ing")
-	result, _ := readFile("test.log")
-	fmt.Println(result)
+	// result, _ := readFile("test.log")
+	// fmt.Println(result)
+	addToFile("test.log", "\nadd new line\n")
 }
