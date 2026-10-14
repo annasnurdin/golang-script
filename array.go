@@ -4,6 +4,7 @@ import "fmt"
 
 func main() {
 	var names [3]string // perlu di deklarasikan jumlah data di dalam array mau berapa biji
+	// yang sudah di deklarasikan panjangnya, tidak bisa dihapus lagi
 
 	names[0] = "Annas"
 	names[1] = "Nurdin"
@@ -24,4 +25,13 @@ func main() {
 
 	fmt.Println(values)
 	fmt.Println(arrayString)
+
+	var nilaiTidakPasti = [...]int{ // tapi ini tidak bisa kalau var nilaiTidakPasti [...]int
+		1, 2, 3, 4, 5,
+	}
+
+	nilaiTidakPasti[0] = 354
+
+	fmt.Println(len(nilaiTidakPasti))
+	fmt.Println(nilaiTidakPasti)
 }
