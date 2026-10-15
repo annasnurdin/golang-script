@@ -19,4 +19,19 @@ func main() {
 	fmt.Println(slice2)
 	fmt.Println(slice3)
 	fmt.Println(slice4)
+
+	days := [...]string{"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"} // ini array
+
+	daySlice1 := days[5:]
+	fmt.Println(daySlice1)
+
+	daySlice1[0] = "Sabtu baru" // ini mengganti value di slice sekaligus di array nya
+	daySlice1[1] = "Minggu baru"
+	fmt.Println(days)
+	fmt.Println(daySlice1)
+
+	daySlice2 := append(daySlice1, "Libur baru") // ini membuat slice baru dari slice daySlice1
+	fmt.Println(daySlice2)
+	fmt.Println(days) // tetapi arraynya masih sama karena panjangnya melebihi
+
 }
