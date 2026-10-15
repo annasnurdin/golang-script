@@ -15,4 +15,13 @@ func main() {
 	fmt.Println(person["name"])
 	fmt.Println(person["address"])
 	fmt.Println(person["wrong"]) // key nya tidak ada, default value
+
+	book := make(map[string]string)
+	book["title"] = "Buku Golang"
+	book["author"] = "Annas"
+	book["wrong"] = "Salah"
+	fmt.Println(book)
+
+	delete(book, "wrong") // hapus key
+	fmt.Println(book)
 }
