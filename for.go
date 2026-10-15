@@ -11,4 +11,8 @@ func main() {
 	}
 
 	fmt.Println("Selesai")
+
+	for counter := 1; counter <= 10; counter++ { // cara lain
+		fmt.Println("Perulangan ke ", counter)
+	}
 }
