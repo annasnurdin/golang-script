@@ -28,10 +28,24 @@ func main() {
 	daySlice1[0] = "Sabtu baru" // ini mengganti value di slice sekaligus di array nya
 	daySlice1[1] = "Minggu baru"
 	fmt.Println(days)
+	fmt.Println(cap(days))
 	fmt.Println(daySlice1)
 
 	daySlice2 := append(daySlice1, "Libur baru") // ini membuat slice baru dari slice daySlice1
 	fmt.Println(daySlice2)
-	fmt.Println(days) // tetapi arraynya masih sama karena panjangnya melebihi
+	fmt.Println(days) // tetapi arraynya masih sama karena panjangnya melebihi, jadinya dia bikin array baru under the hood
 
+	newSlice := make([]string, 2, 5) // panjangnya 2, kapasitasnya 5
+	// kapasitas itu array mana, kalau masih sama kapasitasnya, berarti masih pakai array yang sama
+	newSlice[0] = "Annas"
+	newSlice[1] = "Annas"
+	// newSlice[2] = "Annas" ini tidak bisa karena panjangnya 2
+	fmt.Println(newSlice)
+	fmt.Println(len(newSlice))
+	fmt.Println(cap(newSlice))
+
+	newSlice2 := append(newSlice, "Annas") // untuk nambah isi arraynya pakai append
+	fmt.Println(newSlice2)
+	fmt.Println(len(newSlice2))
+	fmt.Println(cap(newSlice2))
 }
