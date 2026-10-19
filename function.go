@@ -10,4 +10,9 @@ func main() {
 	sayHello()
 	sayHello()
 	sayHello()
+	sayName("Annas") // harus dikirim
+}
+
+func sayName(name string) { // parameter harus dipakai
+	fmt.Println("Hello ", name)
 }
