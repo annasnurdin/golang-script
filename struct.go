@@ -7,6 +7,10 @@ type Customer struct { // template data/ structure
 	Age           int
 }
 
+func (customer Customer) sayHello(name string) { // membuat struct method
+	fmt.Println("Hello,", name, "my name is", customer.Name)
+}
+
 func main() {
 	var annas Customer
 	annas.Name = "Annas"
@@ -15,7 +19,7 @@ func main() {
 
 	fmt.Println(annas)
 
-	purwo := Customer{
+	purwo := Customer{ // objek purwo
 		Name:    "Purwo",
 		Address: "Magelang",
 		Age:     30,
@@ -25,4 +29,7 @@ func main() {
 
 	fmt.Println(purwo)
 	fmt.Println(karin.Name)
+
+	//sayHello() ini tidak bisa karena method dari struct Customer
+	purwo.sayHello("Soleh") // panggil method dari struct
 }
