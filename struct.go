@@ -14,4 +14,15 @@ func main() {
 	annas.Address = "Yogyakarta"
 
 	fmt.Println(annas)
+
+	purwo := Customer{
+		Name:    "Purwo",
+		Address: "Magelang",
+		Age:     30,
+	}
+
+	karin := Customer{"Karin", "Banyuwangi", 25}
+
+	fmt.Println(purwo)
+	fmt.Println(karin.Name)
 }
