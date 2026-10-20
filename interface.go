@@ -18,7 +18,18 @@ func (person Person) GetName() string { // ini implementasi dari interfacenya
 	return person.Name
 }
 
+type Animal struct {
+	Name string
+}
+
+func (animal Animal) GetName() string {
+	return animal.Name
+}
+
 func main() {
 	person := Person{"Annas"}
 	SayHello(person) // baru bisa dipakai function/method nya ini
+
+	animal := Animal{"Anjing"}
+	SayHello(animal)
 }
