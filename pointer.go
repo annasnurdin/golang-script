@@ -18,4 +18,15 @@ func main() {
 	fmt.Println(address1) // tidak berubah, karena pass by value
 	fmt.Println(address2)
 
+	///////////////////////////////////////////////////////
+
+	address3 := Address{"Bantul", "Yogyakarta", "Indonesia"}
+	address4 := &address3 // < ini pointer
+	// penulisan lain: var address4 *Address = &address3
+
+	address4.City = "Kota"
+
+	fmt.Println(address3) // {Kota Yogyakarta Indonesia}
+	fmt.Println(address4) // &{Kota Yogyakarta Indonesia}
+
 }
