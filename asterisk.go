@@ -16,8 +16,8 @@ func main() {
 	fmt.Println(address1) // {Kota Yogyakarta Indonesia}
 	fmt.Println(address2) // &{Kota Yogyakarta Indonesia}
 
-	address2 = &Address{"Jakarta", "DKI", "Indonesia"}
+	*address2 = Address{"Jakarta", "DKI", "Indonesia"}
 	fmt.Println(address1)
-	fmt.Println(address2) // sudah ganti pointernya
+	fmt.Println(address2)
 
 }
