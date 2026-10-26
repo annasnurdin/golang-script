@@ -16,4 +16,11 @@ func main() {
 			c
 		*/
 	}
+
+	hostname, err := os.Hostname()
+	if err == nil {
+		fmt.Println(hostname) // tampil hostname
+	} else {
+		fmt.Println("Error")
+	}
 }
