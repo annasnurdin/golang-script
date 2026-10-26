@@ -44,4 +44,18 @@ func main() {
 	} else { // artinya sukses
 		fmt.Println("Sukses")
 	}
+
+	errr := SaveData("tes", nil)
+	if errr != nil {
+		switch finalError := errr.(type) {
+		case *validationError:
+			fmt.Println("validation error", finalError.Error())
+		case *notFoundError:
+			fmt.Println("not found error", finalError.Error())
+		default:
+			fmt.Println("unknown error", finalError.Error())
+		}
+	} else {
+		fmt.Println("Sukses")
+	}
 }
