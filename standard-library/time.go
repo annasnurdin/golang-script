@@ -22,4 +22,15 @@ func main() {
 	} else {
 		fmt.Println(valueTime) // sudah di format ke Time
 	}
+
+	var duration1 time.Duration = time.Second * 1000
+	fmt.Println(duration1)
+
+	duration2 := time.Minute * 200
+	fmt.Println(duration2)
+
+	duration3 := duration2 - duration1
+	fmt.Println(duration3)
+
+	fmt.Printf("duration: %d\n", duration3)
 }
