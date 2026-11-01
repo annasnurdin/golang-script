@@ -27,7 +27,27 @@ func readField(value any) {
 	}
 	valueType.NumField()
 }
+
+func IsValid(value any) (result bool) {
+	result = true
+	t := reflect.TypeOf(value)
+	for i := 0; i < t.NumField(); i++ {
+		f := t.Field(i)
+		if f.Tag.Get("required") == "true" {
+			data := reflect.ValueOf(value).Field(i).Interface()
+			result = data != ""
+			if result == false {
+				return result
+			}
+		}
+	}
+	return result
+}
+
 func main() {
 	readField(Sample{"Annas"})
 	readField(Person{"Annas", "Yogyakarta", "annas@annas.com"})
+
+	person := Person{"Annas", "Jakarta", ""}
+	fmt.Println(IsValid(person))
 }
