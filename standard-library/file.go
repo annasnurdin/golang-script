@@ -2,13 +2,22 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 	"io"
 	"os"
 )
 
 func createNewFile(name string, message string) error {
 	file, err := os.OpenFile(name, os.O_CREATE|os.O_WRONLY, 0666)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	file.WriteString(message)
+	return nil
+}
+
+func addToFile(name string, message string) error {
+	file, err := os.OpenFile(name, os.O_RDWR|os.O_APPEND, 0666)
 	if err != nil {
 		return err
 	}
@@ -40,6 +49,9 @@ func readFile(name string) (string, error) {
 
 func main() {
 	// createNewFile("Sample.log", "this is sample log")
-	result, _ := readFile("Sample.log")
-	fmt.Println(result)
+
+	// result, _ := readFile("Sample.log")
+	// fmt.Println(result)
+
+	addToFile("Sample.log", "\nnew sample log")
 }
